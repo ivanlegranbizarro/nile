@@ -18,13 +18,13 @@ module Api
         Book.find(params[:id]).destroy!
         head :no_content
       end
-    end
 
-    private
+      private
 
-    def book_params
-      params.require(:book).permit(:title, :author)
+      def book_params
+        params.require(:book).permit(:title, :author)
+      end
     end
   end
 end
-end
+
