@@ -7,7 +7,6 @@ module Api
       end
 
       def create
-        book = Book.new(book_params)
         author = Author.create!(author_params)
         book = Book.new(book_params.merge(author_id: author.id))
         if book.save
